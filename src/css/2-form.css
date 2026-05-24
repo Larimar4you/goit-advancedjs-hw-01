@@ -1,6 +1,5 @@
 .feedback-form {
   width: 408px;
-  min-height: 256px;
   margin: 24px auto;
   padding: 24px;
 
@@ -10,6 +9,7 @@
 
   background-color: #fff;
   border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .feedback-form label {
@@ -35,9 +35,14 @@
   line-height: 1.5;
   letter-spacing: 0.04em;
 
+  color: #2e2f42;
+
   border: 1px solid #808080;
   border-radius: 4px;
-  outline: transparent;
+  outline: none;
+
+  background-color: transparent;
+  box-sizing: border-box;
 }
 
 .feedback-form input {
@@ -56,13 +61,14 @@
 
 .feedback-form input:focus,
 .feedback-form textarea:focus {
-  border-color: #000;
+  border-color: #808080;
 }
 
 .feedback-form button {
   width: 95px;
   height: 40px;
   margin-top: 8px;
+  padding: 8px 16px;
 
   font-family: Montserrat, sans-serif;
   font-weight: 500;
@@ -78,6 +84,7 @@
   cursor: pointer;
 }
 
-.feedback-form button:hover {
+.feedback-form button:hover,
+.feedback-form button:focus {
   background-color: #6c8cff;
 }
