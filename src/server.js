@@ -10,7 +10,7 @@ import notesRoutes from './routes/notesRoutes.js';
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT ?? 3030;
 
 app.use(logger);
 app.use(express.json());
@@ -21,12 +21,8 @@ app.use(notesRoutes);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-const startServer = async () => {
-  await connectMongoDB();
+await connectMongoDB();
 
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-};
-
-startServer();
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
